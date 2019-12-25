@@ -1,3 +1,5 @@
+import { freemem } from 'os';
+
 export const cribs = [
 	{
 		id: 1,
@@ -38,7 +40,7 @@ export const cribs = [
 	{
 		id: 4,
 		type: 'House',
-		price: 755990,
+		price: 750000,
 		address: '7807 Forest Avenue',
 		description: 'Best house on the block!',
 		bedrooms: 6,
