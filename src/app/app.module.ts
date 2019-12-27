@@ -9,10 +9,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
 import { CribsService } from './services/cribs.service';
+import { AppListingFormComponent } from './app-listing-form/app-listing-form.component';
 
 @NgModule({
-	declarations: [ AppComponent, CribListingComponent, CribCardComponent ],
-	imports: [ BrowserModule, FormsModule, HttpClientModule, HttpModule ],
+	declarations: [
+		AppComponent,
+		CribListingComponent,
+		CribCardComponent,
+		AppListingFormComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		HttpClientModule,
+		HttpModule
+	],
 	providers: [ CribsService ],
 	bootstrap: [ AppComponent ]
 })
