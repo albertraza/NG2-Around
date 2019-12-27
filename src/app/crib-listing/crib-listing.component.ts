@@ -10,9 +10,17 @@ export class CribListingComponent implements OnInit {
 	cribs: Array<any>;
 	error: string;
 
-	constructor(private cribService: CribsService) {}
+	constructor(private cribsService: CribsService) {}
 
 	ngOnInit() {
-		this.cribService.getAllCribs().subscribe((data) => (this.cribs = data), (error) => (this.error = error));
+		this.cribsService
+			.getAllCribs()
+			.subscribe(
+				(data) => (this.cribs = data),
+				(error) => (this.error = error)
+			);
+		this.cribsService.newCribSubject.subscribe(
+			(data) => (this.cribs = [ data, ...this.cribs ])
+		);
 	}
 }
