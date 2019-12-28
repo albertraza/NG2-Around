@@ -9,14 +9,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
 import { CribsService } from './services/cribs.service';
+import { UtilService } from './services/util.service';
 import { AppListingFormComponent } from './app-listing-form/app-listing-form.component';
+import { SortByPipe } from './pipes/sort-by.pipe';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		CribListingComponent,
 		CribCardComponent,
-		AppListingFormComponent
+		AppListingFormComponent,
+		SortByPipe
 	],
 	imports: [
 		BrowserModule,
@@ -24,7 +27,7 @@ import { AppListingFormComponent } from './app-listing-form/app-listing-form.com
 		HttpClientModule,
 		HttpModule
 	],
-	providers: [ CribsService ],
+	providers: [ CribsService, UtilService ],
 	bootstrap: [ AppComponent ]
 })
 export class AppModule {}

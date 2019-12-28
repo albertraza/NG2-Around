@@ -4,7 +4,7 @@ import {
 	ViewChild
 } from '@angular/core';
 import { CribsService } from './../services/cribs.service';
-
+import { NgForm } from '@angular/forms';
 @Component({
 	selector: 'app-app-listing-form',
 	templateUrl: './app-listing-form.component.html',
@@ -16,7 +16,8 @@ export class AppListingFormComponent implements OnInit {
 		'Condo',
 		'Duplex'
 	];
-	@ViewChild('newCribForm') newCribForm;
+	@ViewChild('newCribForm', { static: false })
+	newCribForm: NgForm;
 
 	constructor(public cribsService: CribsService) {}
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CribsService } from './../services/cribs.service';
+import { UtilService } from './../services/util.service';
 
 @Component({
 	selector: 'app-crib-listing',
@@ -9,8 +10,19 @@ import { CribsService } from './../services/cribs.service';
 export class CribListingComponent implements OnInit {
 	cribs: Array<any>;
 	error: string;
+	sortFields: Array<string> = [
+		'price',
+		'type',
+		'address',
+		'area',
+		'bathrooms',
+		'bedrooms'
+	];
 
-	constructor(private cribsService: CribsService) {}
+	constructor(
+		private cribsService: CribsService,
+		private utilService: UtilService
+	) {}
 
 	ngOnInit() {
 		this.cribsService
